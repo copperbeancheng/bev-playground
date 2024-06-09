@@ -1,0 +1,51 @@
+{
+	"name": "bev-playground",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "bev-playground:latest",
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "root",
+	//"mounts":[
+	//	"type=volume,source=developer-home-${localEnv:USER},target=/home/dev"
+	//]
+	"runArgs": [
+		"--gpus",
+		"all",
+		"--shm-size",
+		"8gb"
+	],
+	// "mounts": [{ "source": "dind-var-lib-docker", "target": "/var/lib/docker", "type": "volume" }]
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"ms-python.isort",
+				"ms-toolsai.jupyter",
+				"visualstudioexptteam.vscodeintellicode",
+				"njpwerner.autodocstring"
+			],
+			"settings": {
+				//"python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+				//"python.venvFolders": [
+				//	"${workspaceFolder}/.venv"
+				//],
+				//"python.envFile": "${workspaceFolder}/.python-env",
+				"python.defaultInterpreterPath": "/opt/conda/bin/python3",
+				//"python.venvFolders": [
+				//	"/opt/conda/bin"
+				//],
+				//"python.envFile": "/opt/conda/bin/python3",
+				"python.formatting.provider": "black",
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.organizeImports": true
+				},
+				"isort.args": [
+					"--profile",
+					"black"
+				]
+			}
+		}
+	},
+	"postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && .devcontainer/postCreateCommand.sh"
+}

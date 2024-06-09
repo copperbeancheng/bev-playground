@@ -1,0 +1,53 @@
+// {
+// 	"version": "0.2.0",
+// 	"configurations": [
+// 		{
+// 			"name": "DEVDet debug",
+// 			"type": "python",
+// 			"request": "launch",
+// 			"console": "integratedTerminal",
+// 			"justMyCode": true,
+// 			"cwd": "/workspaces/bev-playground/BEVDet",
+// 			//"program": "BEVDet/tools/create_data_bevdet.py",
+// 			"program": "tools/train.py",
+// 			"env": {
+// 				"PYTHONPATH": "/workspaces/bev-playground/BEVDet"
+// 			},
+// 			//"args": [
+// 			//	"--config",
+// 			//	"configs/DEVDet/DEVDet.yaml",
+// 			//	"--data",
+// 			//	"data/DEVDet/DEVDet.yaml",
+// 			//	"--model",
+// 			//	"DEVDet",
+// 			//],
+// 			"args": [
+// 				"configs/bevdet/bevdet-r50.py",
+// 			],
+// 		}
+// 	]
+// }
+// 
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Python:DEVDet ",
+			"type": "python",
+			"request": "launch",
+			"console": "integratedTerminal",
+			"justMyCode": false,
+			"cwd": "/workspaces/bev-playground/BEVDet",
+			//"program": "BEVDet/tools/create_data_bevdet.py",
+			"program": "tools/train.py",
+			"env": {
+				"PYTHONPATH": "/workspaces/bev-playground/BEVDet"
+			},
+			"args": [
+				"configs/bevdet/bevdet-r50.py",
+			],
+		}
+	]
+}
+// program: /usr/bin/python3
+// module: /root/workspace/bev_workspace/BEVDet/tools/create_data.py
